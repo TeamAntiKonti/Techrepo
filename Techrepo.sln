@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Web", "Techrepo.Web\Techrepo.Web.csproj", "{2B2BA52D-6086-486E-9B25-752654E10885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Tests", "Techrepo.Tests\Techrepo.Tests.csproj", "{37EBB529-6F0A-4667-AA5D-F387AACF7C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Models", "Techrepo.Models\Techrepo.Models.csproj", "{81D0404E-A318-4F45-AB68-5E5FA844A211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Data", "Techrepo.Data\Techrepo.Data.csproj", "{B0F35075-845B-49FD-9405-6826FCC52177}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B2BA52D-6086-486E-9B25-752654E10885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2BA52D-6086-486E-9B25-752654E10885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2BA52D-6086-486E-9B25-752654E10885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2BA52D-6086-486E-9B25-752654E10885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EBB529-6F0A-4667-AA5D-F387AACF7C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EBB529-6F0A-4667-AA5D-F387AACF7C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EBB529-6F0A-4667-AA5D-F387AACF7C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EBB529-6F0A-4667-AA5D-F387AACF7C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D0404E-A318-4F45-AB68-5E5FA844A211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D0404E-A318-4F45-AB68-5E5FA844A211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D0404E-A318-4F45-AB68-5E5FA844A211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D0404E-A318-4F45-AB68-5E5FA844A211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F35075-845B-49FD-9405-6826FCC52177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F35075-845B-49FD-9405-6826FCC52177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F35075-845B-49FD-9405-6826FCC52177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F35075-845B-49FD-9405-6826FCC52177}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
