@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Models", "Techrepo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Data", "Techrepo.Data\Techrepo.Data.csproj", "{B0F35075-845B-49FD-9405-6826FCC52177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techrepo.Repositories", "Techrepo.Repositories\Techrepo.Repositories.csproj", "{9631B5E2-9B92-4596-B458-5E1DB4775FB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B0F35075-845B-49FD-9405-6826FCC52177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F35075-845B-49FD-9405-6826FCC52177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F35075-845B-49FD-9405-6826FCC52177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9631B5E2-9B92-4596-B458-5E1DB4775FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9631B5E2-9B92-4596-B458-5E1DB4775FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9631B5E2-9B92-4596-B458-5E1DB4775FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9631B5E2-9B92-4596-B458-5E1DB4775FB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
