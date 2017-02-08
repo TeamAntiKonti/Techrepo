@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using Techrepo.Web.Models;
+using Techrepo.Models;
 
 namespace Techrepo.Web.Account
 {
@@ -93,7 +94,12 @@ namespace Techrepo.Web.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var user = new User()
+            {
+                // TODO: same thing, maybe
+                UserName = email.Text,
+                Email = email.Text
+            };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
