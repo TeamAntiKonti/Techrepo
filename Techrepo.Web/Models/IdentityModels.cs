@@ -28,18 +28,18 @@ namespace Techrepo.Web.Models
     //    }
     //}
 
-    public class ApplicationDbContext : IdentityDbContext<User>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
+    //public class ApplicationDbContext : IdentityDbContext<User>
+    //{
+    //    public ApplicationDbContext()
+    //        : base("Techrepo", throwIfV1Schema: false)
+    //    {
+    //    }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-    }
+    //    public static ApplicationDbContext Create()
+    //    {
+    //        return new ApplicationDbContext();
+    //    }
+    //}
 }
 
 #region Helpers
