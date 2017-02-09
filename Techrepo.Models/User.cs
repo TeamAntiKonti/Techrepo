@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Techrepo.Models
@@ -13,10 +10,12 @@ namespace Techrepo.Models
     public class User : IdentityUser
     {
         private ICollection<Advert> myAdverts;
+        private ICollection<Advert> favourites;
 
         public User()
         {
             this.myAdverts = new HashSet<Advert>();
+            this.favourites = new HashSet<Advert>();
         }
 
         [Required]
@@ -29,14 +28,10 @@ namespace Techrepo.Models
         [MaxLength(30)]
         public string LastName { get; set; }
 
-        [Required]
-        [MinLength(2)]
-        [MaxLength(30)]
-        public string UserName { get; set; }
-
-        [Required]
-        [MaxLength(25)]
-        public string Email { get; set; }
+        //[Required]
+        //[MinLength(2)]
+        //[MaxLength(30)]
+        //public override string UserName { get; set; }
 
         public virtual ICollection<Advert> MyAdverts
         {
@@ -47,6 +42,18 @@ namespace Techrepo.Models
             set
             {
                 this.myAdverts = value;
+            }
+        }
+
+        public virtual ICollection<Advert> Favourites
+        {
+            get
+            {
+                return this.favourites;
+            }
+            set
+            {
+                this.favourites = value;
             }
         }
 

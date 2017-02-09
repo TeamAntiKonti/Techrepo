@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using Techrepo.Web.App_Start;
 
 namespace Techrepo.Web
 {
@@ -16,6 +17,7 @@ namespace Techrepo.Web
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DbConfig.Initialize();
         }
     }
 }

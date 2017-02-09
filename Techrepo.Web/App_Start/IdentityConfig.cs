@@ -8,6 +8,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Techrepo.Web.Models;
 using Techrepo.Models;
+using Techrepo.Data;
 
 namespace Techrepo.Web
 {
@@ -39,7 +40,7 @@ namespace Techrepo.Web
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<TechrepoDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {

@@ -343,6 +343,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -392,6 +393,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Techrepo.Data\Techrepo.Data.csproj">
+      <Project>{B0F35075-845B-49FD-9405-6826FCC52177}</Project>
+      <Name>Techrepo.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Techrepo.Models\Techrepo.Models.csproj">
       <Project>{81D0404E-A318-4F45-AB68-5E5FA844A211}</Project>
       <Name>Techrepo.Models</Name>

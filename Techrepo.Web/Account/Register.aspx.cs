@@ -17,7 +17,7 @@ namespace Techrepo.Web.Account
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new User()
             {
-                UserName = Email.Text,
+                UserName = UserName.Text,
                 FirstName = FirstName.Text,
                 LastName = LastName.Text,
                 Email = Email.Text
