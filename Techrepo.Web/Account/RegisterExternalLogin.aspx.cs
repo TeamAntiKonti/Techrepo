@@ -3,8 +3,6 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
-using Techrepo.Web.Models;
 using Techrepo.Models;
 
 namespace Techrepo.Web.Account
