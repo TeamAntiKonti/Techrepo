@@ -8,5 +8,6 @@ namespace Techrepo.MVP
 {
     public class Class1
     {
+
     }
 }
