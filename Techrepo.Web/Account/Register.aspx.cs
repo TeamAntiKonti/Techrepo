@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
 using Techrepo.Models;
+using WebFormsMvp.Web;
+using Techrepo.Web.Account.Models;
+using Techrepo.Web.Account.Views;
+using Techrepo.Web.Account.EventArguments;
+using WebFormsMvp;
+using Techrepo.Web.Account.Presenters;
 
 namespace Techrepo.Web.Account
 {
-    public partial class Register : Page
+    [PresenterBinding(typeof(RegisterPresenter))]
+    public partial class Register : MvpPage<RegisterViewModel>, IRegisterView
     {
+        public event EventHandler<RegisterEventArgs> OnRegister;
+        public event EventHandler<SignInEventArgs> OnSignIn;
+
         protected void CreateUser_Click(object sender, EventArgs e)
-        {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
+        {           
             var user = new User()
             {
                 UserName = UserName.Text,
@@ -22,20 +25,18 @@ namespace Techrepo.Web.Account
                 LastName = LastName.Text,
                 Email = Email.Text
             };
-            IdentityResult result = manager.Create(user, Password.Text);
-            if (result.Succeeded)
-            {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+            this.OnRegister?.Invoke(this, new RegisterEventArgs(this.Context, user, this.Password.Text));
+
+            if (this.Model.IdentityResult.Succeeded)
+            {                
+                this.OnSignIn?.Invoke(this, new SignInEventArgs(this.Context, user));
+
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else 
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                ErrorMessage.Text = this.Model.IdentityResult.Errors.FirstOrDefault();
             }
         }
     }
