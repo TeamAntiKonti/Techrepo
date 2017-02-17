@@ -2,11 +2,20 @@
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity.Owin;
+using WebFormsMvp.Web;
+using Techrepo.Web.Account.Models;
+using Techrepo.Web.Account.Views;
+using Techrepo.Web.Account.EventArguments;
+using WebFormsMvp;
+using Techrepo.Web.Account.Presenters;
 
 namespace Techrepo.Web.Account
 {
-    public partial class Login : Page
+    [PresenterBinding(typeof(LoginPresenter))]
+    public partial class Login : MvpPage<LoginViewModel>, ILoginView
     {
+        public event EventHandler<LoginEventArgs> OnLogin;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "Register";
@@ -23,16 +32,18 @@ namespace Techrepo.Web.Account
         protected void LogIn(object sender, EventArgs e)
         {
             if (IsValid)
-            {                
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                //{                
+                //    // Validate the user password
+                //    var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                //    var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
-                // This doen't count login failures towards account lockout
-                // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(UserName.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+                //    // This doen't count login failures towards account lockout
+                //    // To enable password failures to trigger lockout, change to shouldLockout: true
+                //    var result = signinManager.PasswordSignIn(UserName.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
 
-                switch (result)
+                this.OnLogin?.Invoke(this, new LoginEventArgs(this.Context, this.UserName.Text, this.Password.Text, this.RememberMe.Checked, shouldLockOut: false));
+
+                switch (this.Model.SignInStatus)
                 {
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
@@ -51,7 +62,7 @@ namespace Techrepo.Web.Account
                         FailureText.Text = "Invalid login attempt";
                         ErrorMessage.Visible = true;
                         break;
-                }
+                
             }
         }
     }

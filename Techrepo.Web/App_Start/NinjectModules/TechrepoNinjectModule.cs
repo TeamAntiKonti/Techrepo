@@ -3,6 +3,8 @@ using Ninject.Modules;
 using Techrepo.Data;
 using Ninject.Web.Common;
 using Techrepo.Data.Contracts;
+using Techrepo.Web.Account.Views;
+using Techrepo.Web.Account.Models;
 
 namespace Techrepo.Web.App_Start.NinjectModules
 {

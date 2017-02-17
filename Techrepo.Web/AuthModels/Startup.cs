@@ -1,15 +1,20 @@
-﻿using System;
+﻿using Microsoft.Owin;
+using Owin;
+using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Owin;
 using Techrepo.Models;
 using Techrepo.Data;
 
+[assembly: OwinStartupAttribute(typeof(Techrepo.Web.Startup))]
 namespace Techrepo.Web
 {
     public partial class Startup {
+        public void Configuration(IAppBuilder app)
+        {
+            ConfigureAuth(app);
+        }
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
         public void ConfigureAuth(IAppBuilder app)
