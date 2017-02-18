@@ -50,5 +50,16 @@ namespace Techrepo.Tests.Models
             var attribute = category.GetCustomAttribute(typeof(RequiredAttribute));
             Assert.IsNotNull(attribute); ;
         }
+
+        [Test]
+        public void Category_IdShouldBeKeyAttribute()
+        {
+            var category = typeof(AdvertCategory).GetProperty("Id");
+            //using reflection
+            var attribute = category.GetCustomAttribute(typeof(KeyAttribute));
+            Assert.IsNotNull(attribute); ;
+        }
+
+
     }
 }
