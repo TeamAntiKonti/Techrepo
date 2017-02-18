@@ -72,6 +72,15 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+                    
+                    <asp:LoginView ID="LoginView1" runat="server">
+                           <LoggedInTemplate>
+                               <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
+                        
+                    </ul>
+                           </LoggedInTemplate>
+                    </asp:LoginView>
                 </div>
             </div>
         </div>

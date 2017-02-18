@@ -1,16 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateAdvert.aspx.cs" Inherits="Techrepo.Web.CreateAdvert" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateAdvert.aspx.cs" Inherits="Techrepo.Web.CreateAdvert" MasterPageFile="~/Site.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <p>Creeeate</p>
+</asp:Content>
