@@ -50,8 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvertsService.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="IAdvertsService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

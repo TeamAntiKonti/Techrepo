@@ -12,8 +12,6 @@ namespace Techrepo.Web.App_Start
     using Ninject.Web.Common;
     using NinjectModules;
     using WebFormsMvp.Binder;
-    using Data;
-    using Services;
 
     public static class NinjectWebCommon 
     {
@@ -71,13 +69,9 @@ namespace Techrepo.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            //kernel.Load(new TechrepoNinjectModule());
+            kernel.Load(new TechrepoNinjectModule());
             kernel.Load(new MvpNinjectModule());
-            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
-            kernel.Bind<ITechrepoDbContext>().To<TechrepoDbContext>().InRequestScope();
-            //kernel.Bind(typeof(ITechrepoDbContext),typeof(I))
-            kernel.Bind<IAdvertsService>().To<AdvertsService>();
-
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();            
 
             
         }        

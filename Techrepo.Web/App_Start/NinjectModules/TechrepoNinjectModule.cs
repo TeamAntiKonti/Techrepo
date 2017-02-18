@@ -1,10 +1,8 @@
-﻿using System;
-using Ninject.Modules;
+﻿using Ninject.Modules;
 using Techrepo.Data;
 using Ninject.Web.Common;
 using Techrepo.Data.Contracts;
-using Techrepo.Web.Account.Views;
-using Techrepo.Web.Account.Models;
+using Techrepo.Services;
 
 namespace Techrepo.Web.App_Start.NinjectModules
 {
@@ -16,6 +14,9 @@ namespace Techrepo.Web.App_Start.NinjectModules
 
             this.Bind<ITechrepoDbContext>().To<TechrepoDbContext>().InRequestScope();
             this.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>)).InRequestScope();
+            this.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
+            this.Bind<IAdvertsService>().To<AdvertsService>().InRequestScope();
+            this.Bind<IUserService>().To<UserService>().InRequestScope();
         }
     }
 }
