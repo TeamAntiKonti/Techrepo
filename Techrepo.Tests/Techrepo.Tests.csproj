@@ -74,17 +74,27 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AdvertsTests.cs" />
     <Compile Include="Models\CategoryTests.cs" />
     <Compile Include="Models\CityTests.cs" />
+    <Compile Include="Mvp\Adverts\AdvertsPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Techrepo.Models\Techrepo.Models.csproj">
       <Project>{81D0404E-A318-4F45-AB68-5E5FA844A211}</Project>
       <Name>Techrepo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Techrepo.MVP\Techrepo.MVP.csproj">
+      <Project>{C387597B-9BDC-4AD7-97A2-D6C68FB08D91}</Project>
+      <Name>Techrepo.MVP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Techrepo.Services\Techrepo.Services.csproj">
+      <Project>{81E89882-CA61-49C4-B68A-0BEC12BB227B}</Project>
+      <Name>Techrepo.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Techrepo.Web\Techrepo.Web.csproj">
       <Project>{2B2BA52D-6086-486E-9B25-752654E10885}</Project>
