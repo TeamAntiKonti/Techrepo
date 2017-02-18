@@ -5,10 +5,10 @@ using Techrepo.Data.Contracts;
 
 namespace Techrepo.Data
 {
-    public class GenericRepository<T> : IRepository<T>
+    public class GenericRepository<T> : IRepository<T> 
         where T : class
     {
-        public GenericRepository(DbContext context)
+        public GenericRepository(ITechrepoDbContext context)
         {
             if (context == null)
             {
@@ -22,7 +22,7 @@ namespace Techrepo.Data
 
         protected IDbSet<T> DbSet { get; set; }
 
-        protected DbContext Context { get; set; }
+        protected ITechrepoDbContext Context { get; set; }
 
         public IQueryable<T> Entities => this.DbSet;
 

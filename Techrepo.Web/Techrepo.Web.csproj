@@ -188,21 +188,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\Additionals\AddPhoneNumber.aspx" />
-    <Content Include="Account\Additionals\Confirm.aspx" />
-    <Content Include="Account\Additionals\Forgot.aspx" />
-    <Content Include="Account\Additionals\Lockout.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Additionals\Manage.aspx" />
-    <Content Include="Account\Additionals\ManageLogins.aspx" />
-    <Content Include="Account\Additionals\ManagePassword.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Account\Additionals\RegisterExternalLogin.aspx" />
-    <Content Include="Account\Additionals\ResetPassword.aspx" />
-    <Content Include="Account\Additionals\ResetPasswordConfirmation.aspx" />
-    <Content Include="Account\Additionals\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Account\Additionals\VerifyPhoneNumber.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Adverts.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -265,21 +265,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\Additionals\AddPhoneNumber.aspx.cs">
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\AddPhoneNumber.aspx.designer.cs">
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\EventArgs\GetUserByIdEventArgs.cs" />
     <Compile Include="Account\EventArgs\LoginEventArgs.cs" />
     <Compile Include="Account\EventArgs\RegisterEventArgs.cs" />
     <Compile Include="Account\EventArgs\SignInEventArgs.cs" />
     <Compile Include="Account\Models\LoginViewModel.cs" />
+    <Compile Include="Account\Models\ManageProfileVIewModel.cs" />
     <Compile Include="Account\Models\RegisterViewModel.cs" />
     <Compile Include="Account\Presenters\LoginPresenter.cs" />
+    <Compile Include="Account\Presenters\ManageProfilePresenter.cs" />
     <Compile Include="Account\Presenters\RegisterPresenter.cs" />
     <Compile Include="Account\Views\ILoginView.cs" />
+    <Compile Include="Account\Views\IManageProfileView.cs" />
     <Compile Include="Account\Views\IRegisterView.cs" />
     <Compile Include="Adverts.aspx.cs">
       <DependentUpon>Adverts.aspx</DependentUpon>
@@ -290,25 +294,25 @@
     </Compile>
     <Compile Include="AuthModels\ApplicationUserManager.cs" />
     <Compile Include="AuthModels\ApplicationSignInManager.cs" />
-    <Compile Include="Account\Additionals\Confirm.aspx.cs">
+    <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\Confirm.aspx.designer.cs">
+    <Compile Include="Account\Confirm.aspx.designer.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\Forgot.aspx.cs">
+    <Compile Include="Account\Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\Forgot.aspx.designer.cs">
+    <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\Lockout.aspx.cs">
+    <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\Lockout.aspx.designer.cs">
+    <Compile Include="Account\Lockout.aspx.designer.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Login.aspx.cs">
@@ -318,25 +322,25 @@
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\Manage.aspx.cs">
+    <Compile Include="Account\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\Manage.aspx.designer.cs">
+    <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\ManageLogins.aspx.cs">
+    <Compile Include="Account\ManageLogins.aspx.cs">
       <DependentUpon>ManageLogins.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\ManageLogins.aspx.designer.cs">
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
       <DependentUpon>ManageLogins.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\ManagePassword.aspx.cs">
+    <Compile Include="Account\ManagePassword.aspx.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\ManagePassword.aspx.designer.cs">
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
@@ -353,39 +357,39 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\RegisterExternalLogin.aspx.cs">
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\RegisterExternalLogin.aspx.designer.cs">
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\ResetPassword.aspx.cs">
+    <Compile Include="Account\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\ResetPassword.aspx.designer.cs">
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\ResetPasswordConfirmation.aspx.cs">
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\ResetPasswordConfirmation.aspx.designer.cs">
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\TwoFactorAuthenticationSignIn.aspx.cs">
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Additionals\VerifyPhoneNumber.aspx.cs">
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Additionals\VerifyPhoneNumber.aspx.designer.cs">
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -459,6 +463,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Account\Additionals\" />
     <Folder Include="App_Data\" />
     <Folder Include="EventArgs\" />
     <Folder Include="Models\" />

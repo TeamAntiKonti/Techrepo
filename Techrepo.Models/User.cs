@@ -28,6 +28,8 @@ namespace Techrepo.Models
         [MaxLength(30)]
         public string LastName { get; set; }
 
+        public string AvatartPath { get; set; }
+
         //[Required]
         //[MinLength(2)]
         //[MaxLength(30)]
