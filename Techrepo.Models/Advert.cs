@@ -26,7 +26,8 @@ namespace Techrepo.Models
         [Required]
         public decimal Price { get; set; }
 
-        public int OwnerId { get; set; }
+        //[Required]
+        public string OwnerId { get; set; }
         public virtual User Owner { get; set; }
 
         public virtual ICollection<User> Subscribers
@@ -41,17 +42,17 @@ namespace Techrepo.Models
             }
         }
 
-        [Required]
+        //[Required]
         public string OwnerEmail { get; set; }
 
-        [Required]
+        //[Required]
         public string OwnerPhone { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public virtual AdvertCategory Category { get; set; }
 
-        public ProductState ProductState { get; set; }
+        public string ProductState { get; set; }
 
-        public Delivery Delivery { get; set; }
+        public string Delivery { get; set; }
     }
 }
