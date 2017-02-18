@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <%--<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
     <link href="~/images/tech.png" rel="shortcut icon" type="image/x-icon" />
 
@@ -72,14 +72,19 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
-                    
+
                     <asp:LoginView ID="LoginView1" runat="server">
-                           <LoggedInTemplate>
-                               <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
-                        
-                    </ul>
-                           </LoggedInTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Ordinary">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
+
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+
                     </asp:LoginView>
                 </div>
             </div>
