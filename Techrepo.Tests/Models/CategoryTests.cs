@@ -1,11 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Models;
 
 namespace Techrepo.Tests.Models
@@ -45,19 +41,19 @@ namespace Techrepo.Tests.Models
         [Test]
         public void Category_NameShouldBeRequiredAndShouldNotBeNull()
         {
-            var category = typeof(AdvertCategory).GetProperty("Name");
+            var categoryName = typeof(AdvertCategory).GetProperty("Name");
             //using reflection
-            var attribute = category.GetCustomAttribute(typeof(RequiredAttribute));
+            var attribute = categoryName.GetCustomAttribute(typeof(RequiredAttribute));
             Assert.IsNotNull(attribute); ;
         }
 
         [Test]
         public void Category_IdShouldBeKeyAttribute()
         {
-            var category = typeof(AdvertCategory).GetProperty("Id");
+            var categoryId = typeof(AdvertCategory).GetProperty("Id");
             //using reflection
-            var attribute = category.GetCustomAttribute(typeof(KeyAttribute));
-            Assert.IsNotNull(attribute); ;
+            var attribute = categoryId.GetCustomAttribute(typeof(KeyAttribute));
+            Assert.IsNotNull(attribute); 
         }
 
 

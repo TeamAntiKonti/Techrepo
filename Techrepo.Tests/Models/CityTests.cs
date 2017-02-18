@@ -1,11 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Models;
 
 namespace Techrepo.Tests.Models
@@ -43,18 +39,18 @@ namespace Techrepo.Tests.Models
         public void City_IdShouldBeKeyAttribute()
         {
 
-            var city = typeof(City).GetProperty("Id");
+            var cityId = typeof(City).GetProperty("Id");
             //using reflection
-            var attribute = city.GetCustomAttribute(typeof(KeyAttribute));
+            var attribute = cityId.GetCustomAttribute(typeof(KeyAttribute));
             Assert.IsNotNull(attribute);
 
         }
         [Test]
         public void City_NameShouldBeRequiredAndShouldNotBeNull()
         {
-            var city = typeof(City).GetProperty("Name");
+            var cityName = typeof(City).GetProperty("Name");
             //using reflection
-            var attribute = city.GetCustomAttribute(typeof(RequiredAttribute));
+            var attribute = cityName.GetCustomAttribute(typeof(RequiredAttribute));
             Assert.IsNotNull(attribute); ;
         }
     }
