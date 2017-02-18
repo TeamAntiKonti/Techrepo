@@ -17,8 +17,7 @@
                 <h4>Change your account settings</h4>
                 <hr />
                 
-                <img class="col-md-3" src="<%# this.defaultAvatar%>" alt="<%#: this.defaultAvatar%>" />
-                    
+                <asp:Image Width="200" Height="200" ImageUrl="<%# this.AvatarUrl %>" runat="server" />  
 
                 <div class="form-group">
                     <asp:Label runat="server" AssociatedControlID="Avatar" CssClass="col-md-2 control-label">Avatar</asp:Label>
@@ -29,6 +28,25 @@
                 <p class="text-danger">
                     <asp:Literal runat="server" ID="ErrorMessage" />
                 </p>
+
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">FirstName</asp:Label>
+                    <div class="col-md-10">
+                        <asp:TextBox runat="server" ID="FirstName" CssClass="form-control"/>
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="FIrstName"
+                            CssClass="text-danger" ErrorMessage="The first name field is required." />
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">LastName</asp:Label>
+                    <div class="col-md-10">
+                        <asp:TextBox runat="server" ID="LastName" CssClass="form-control"/>
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                            CssClass="text-danger" ErrorMessage="The last name field is required." />
+                    </div>
+                </div>
+                
                 <dl class="dl-horizontal">
                     <dt>Password:</dt>
                     <dd>

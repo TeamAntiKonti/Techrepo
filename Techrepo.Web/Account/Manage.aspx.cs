@@ -7,7 +7,6 @@ using Techrepo.Web.Account.Models;
 using Techrepo.Web.Account.Views;
 using WebFormsMvp;
 using Techrepo.Web.Account.Presenters;
-using System.IO;
 using Techrepo.Web.Account.EventArguments;
 
 namespace Techrepo.Web.Account
@@ -15,7 +14,7 @@ namespace Techrepo.Web.Account
     [PresenterBinding(typeof(ManageProfilePresenter))]
     public partial class Manage : MvpPage<ManageProfileVIewModel>, IManageProfileView
     {
-        public readonly string defaultAvatar = "C:/Sites/Techrepo/Techrepo.Web/images/default-avatar.png";
+        public readonly string defaultAvatar = "http://static.baubau.bg/thumbs/12/neverni-mitove-za-kotkite.jpg";
 
         protected string SuccessMessage
         {
@@ -35,8 +34,11 @@ namespace Techrepo.Web.Account
         protected void Page_Load()
         {
             // TODO: 
-            var id = Context.User.Identity.GetUserId();
-            this.AvatarUrl = Server.MapPath("~/images/") + id + ".png";
+            string filename = this.Context.User.Identity.GetUserId() + ".png";
+
+            string path = Server.MapPath("~/images/") + filename;
+
+            this.AvatarUrl = "~/images/" + filename;
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
@@ -100,13 +102,18 @@ namespace Techrepo.Web.Account
                         //filename += ("." + fileExtension[1]);
                         filename += ".png";
 
+
                         string path = Server.MapPath("~/images/") + filename;
-                        
+
+                        String RelativePath = path.Replace(Request.ServerVariables["APPL_PHYSICAL_PATH"], String.Empty);
+                        this.AvatarUrl = RelativePath;
                         // TODO: Check if it overrides the previous photo
                         Avatar.SaveAs(path);
 
+                        this.AvatarUrl = "~/images/" + filename;
+
                         var userId = this.User.Identity.GetUserId();
-                        this.OnUpdateProfile?.Invoke(this, new GetUserByIdEventArgs(this.Context, userId, path));
+                        this.OnUpdateProfile?.Invoke(this, new GetUserByIdEventArgs(this.Context, userId, RelativePath));
                     }
                     else
                     {
