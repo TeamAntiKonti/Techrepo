@@ -33,6 +33,8 @@ namespace Techrepo.Web.Administration.Category
             if (IsValid)
             {
                 this.OnCreateNewCategory?.Invoke(this, new CreateCategoryEventArgs(this.CategoryName.Text));
+                successMessage.Visible = true;
+                SuccessMessage = "Successfully added!";
             }
         }
     }
