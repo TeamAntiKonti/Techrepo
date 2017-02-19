@@ -13,9 +13,16 @@
 
         <ItemTemplate>
             <div class="col-md-4">
-                <h1>----Advert-----</h1>
-                <h2><%#: Item.Price %></h2>
-                <h2><%#: Item.Description %></h2>
+                <a href=""><h1><%#: Item.Title %></h1>
+                <asp:Image runat="server" ImageUrl="~/images/tech.png"/> 
+                    </a>
+                <br />
+                <h3><span class=" glyphicon glyphicon-briefcase"></span><%#: Item.Price %>лв.</h3>
+                <h3><span class="glyphicon glyphicon-tag"></span><%#: Item.ProductState %></h3>
+
+                
+                
+                
                 <%--<asp:ListView runat="server" ID="RepeaterAdverts" ItemType="Techrepo.Models.Advert" DataSource="<%# Item.Books %>">
                     <LayoutTemplate>
                         <ul>
