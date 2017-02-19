@@ -203,6 +203,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AdminPanel.aspx" />
     <Content Include="Adverts.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -285,6 +286,13 @@
     <Compile Include="Account\Views\ILoginView.cs" />
     <Compile Include="Account\Views\IManageProfileView.cs" />
     <Compile Include="Account\Views\IRegisterView.cs" />
+    <Compile Include="AdminPanel.aspx.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Adverts.aspx.cs">
       <DependentUpon>Adverts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -44,6 +44,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanel\AdminPanelPresenter.cs" />
+    <Compile Include="AdminPanel\AdminPanelViewModel.cs" />
+    <Compile Include="AdminPanel\CreateCategoryEventArgs.cs" />
+    <Compile Include="AdminPanel\IAdminPanelView.cs" />
     <Compile Include="Adverts\AdvertsPresenter.cs" />
     <Compile Include="Adverts\AdvertsViewModel.cs" />
     <Compile Include="Adverts\IAdvertsView.cs" />

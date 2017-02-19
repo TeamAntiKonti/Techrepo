@@ -86,12 +86,9 @@ namespace Techrepo.Web.Account
         protected void UpdateUserProfile(object sender, EventArgs e)
         {
             if(IsValid)
-            {
-                //var userToBeUpdated 
-
+            {  
                 if(Avatar.HasFile)
                 {
-
                     if(Avatar.PostedFile.ContentType == "image/jpeg" 
                         || Avatar.PostedFile.ContentType == "image/png")
                     {
@@ -99,15 +96,13 @@ namespace Techrepo.Web.Account
 
                         var fileExtension = Avatar.PostedFile.ContentType.Split('/');
 
-                        //filename += ("." + fileExtension[1]);
                         filename += ".png";
-
 
                         string path = Server.MapPath("~/images/") + filename;
 
                         String RelativePath = path.Replace(Request.ServerVariables["APPL_PHYSICAL_PATH"], String.Empty);
                         this.AvatarUrl = RelativePath;
-                        // TODO: Check if it overrides the previous photo
+                        
                         Avatar.SaveAs(path);
 
                         this.AvatarUrl = "~/images/" + filename;

@@ -17,6 +17,7 @@ namespace Techrepo.Web.App_Start.NinjectModules
             this.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
             this.Bind<IAdvertsService>().To<AdvertsService>().InRequestScope();
             this.Bind<IUserService>().To<UserService>().InRequestScope();
+            this.Bind<IAdvertCategoryService>().To<AdvertCategoryService>().InRequestScope();
         }
     }
 }
