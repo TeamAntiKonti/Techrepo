@@ -44,9 +44,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration\Category\Create\CreateCategoryEventArgs.cs" />
+    <Compile Include="Administration\Category\Create\CreateCategoryPresenter.cs" />
+    <Compile Include="Administration\Category\Create\CreateCategoryViewModel.cs" />
+    <Compile Include="Administration\Category\Create\ICreateCategoryView.cs" />
     <Compile Include="AdminPanel\AdminPanelPresenter.cs" />
     <Compile Include="AdminPanel\AdminPanelViewModel.cs" />
     <Compile Include="AdminPanel\CreateCategoryEventArgs.cs" />
+    <Compile Include="AdminPanel\CreateCityEventArgs.cs" />
     <Compile Include="AdminPanel\IAdminPanelView.cs" />
     <Compile Include="Adverts\AdvertsPresenter.cs" />
     <Compile Include="Adverts\AdvertsViewModel.cs" />

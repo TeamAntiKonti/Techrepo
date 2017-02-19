@@ -10,6 +10,8 @@ namespace Techrepo.Web
 	{
         public event EventHandler<CreateCategoryEventArgs> OnCreateNewCategory;
 
+        //public event EventHandler<CreateCityEventArgs> OnCreateNewCity;
+
         protected string SuccessMessage
         {
             get;
@@ -27,5 +29,13 @@ namespace Techrepo.Web
                 this.OnCreateNewCategory?.Invoke(this, new CreateCategoryEventArgs(this.CategoryName.Text));
             }
         }
+
+        //protected void CreateCity_Click(object sender , EventArgs e)
+        //{
+        //    if(IsValid)
+        //    {
+        //        this.OnCreateNewCity?.Invoke(this, new CreateCityEventArgs(this.CityName.Text));
+        //    }
+        //}
     }
 }

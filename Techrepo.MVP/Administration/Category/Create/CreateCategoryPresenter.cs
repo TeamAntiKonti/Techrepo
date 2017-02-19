@@ -1,13 +1,17 @@
-﻿using Techrepo.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Techrepo.Services;
 using WebFormsMvp;
 
-namespace Techrepo.MVP.AdminPanel
+namespace Techrepo.MVP.Administration.Category.Create
 {
-    public class AdminPanelPresenter : Presenter<IAdminPanelView>
+    public class CreateCategoryPresenter:Presenter<ICreateCategoryView>
     {
         private readonly IAdvertCategoryService advertCategoryService;
-        public AdminPanelPresenter(IAdminPanelView view, IAdvertCategoryService advertCategoryService) 
+        public CreateCategoryPresenter(ICreateCategoryView view, IAdvertCategoryService advertCategoryService) 
             : base(view)
         {
             this.advertCategoryService = advertCategoryService;
@@ -18,10 +22,5 @@ namespace Techrepo.MVP.AdminPanel
         {
             this.advertCategoryService.CreateNewCategory(e.Name);
         }
-
-       //private void View_OnCreateNewCity(object sender,CreateCityEventArgs e)
-       // {
-       //     //this.advertCategoryService
-       // }
     }
 }

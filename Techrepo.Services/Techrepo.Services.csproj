@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="AdvertCategoryService.cs" />
     <Compile Include="AdvertsService.cs" />
+    <Compile Include="CityService.cs" />
     <Compile Include="IAdvertCategoryService.cs" />
+    <Compile Include="ICityService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="IAdvertsService.cs" />
     <Compile Include="IUserService.cs" />
