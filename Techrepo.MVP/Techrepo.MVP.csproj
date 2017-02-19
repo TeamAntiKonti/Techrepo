@@ -48,6 +48,10 @@
     <Compile Include="Administration\Category\Create\CreateCategoryPresenter.cs" />
     <Compile Include="Administration\Category\Create\CreateCategoryViewModel.cs" />
     <Compile Include="Administration\Category\Create\ICreateCategoryView.cs" />
+    <Compile Include="Administration\City\Create\CreateCityEventArgs.cs" />
+    <Compile Include="Administration\City\Create\CreateCityPresenter.cs" />
+    <Compile Include="Administration\City\Create\CreateCityViewModel.cs" />
+    <Compile Include="Administration\City\Create\ICreateCityView.cs" />
     <Compile Include="AdminPanel\AdminPanelPresenter.cs" />
     <Compile Include="AdminPanel\AdminPanelViewModel.cs" />
     <Compile Include="AdminPanel\CreateCategoryEventArgs.cs" />
