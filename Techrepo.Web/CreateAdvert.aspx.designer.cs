@@ -22,13 +22,13 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// textBoxTitle control.
+        /// AdvertTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxTitle;
+        protected global::System.Web.UI.WebControls.TextBox AdvertTitle;
         
         /// <summary>
         /// Label2 control.
@@ -40,13 +40,13 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// textBoxDescription control.
+        /// AdvertDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxDescription;
+        protected global::System.Web.UI.WebControls.TextBox AdvertDescription;
         
         /// <summary>
         /// Label3 control.
@@ -58,13 +58,13 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// textBox1 control.
+        /// AdvertPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBox1;
+        protected global::System.Web.UI.WebControls.TextBox AdvertPrice;
         
         /// <summary>
         /// Label4 control.
@@ -76,13 +76,13 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// textBox2 control.
+        /// OwnerEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBox2;
+        protected global::System.Web.UI.WebControls.TextBox OwnerEmail;
         
         /// <summary>
         /// Label5 control.
@@ -94,13 +94,13 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// textBox3 control.
+        /// OwnerPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBox3;
+        protected global::System.Web.UI.WebControls.TextBox OwnerPhone;
         
         /// <summary>
         /// Label6 control.
@@ -112,12 +112,84 @@ namespace Techrepo.Web {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// Category control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList Category;
+        
+        /// <summary>
+        /// Label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
+        /// City control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList City;
+        
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// ProductState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ProductState;
+        
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// Delivery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Delivery;
+        
+        /// <summary>
+        /// UploadedImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload UploadedImages;
+        
+        /// <summary>
+        /// StatusLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusLabel;
     }
 }

@@ -33,10 +33,7 @@ namespace Techrepo.Web.Account
 
         protected void Page_Load()
         {
-            // TODO: 
             string filename = this.Context.User.Identity.GetUserId() + ".png";
-
-            string path = Server.MapPath("~/images/") + filename;
 
             this.AvatarUrl = "~/images/" + filename;
 

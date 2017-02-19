@@ -61,6 +61,10 @@
     <Compile Include="Adverts\AdvertsViewModel.cs" />
     <Compile Include="Adverts\IAdvertsView.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CreateAdvert\CreateAdvertEventArgs.cs" />
+    <Compile Include="CreateAdvert\CreateAdvertPresenter.cs" />
+    <Compile Include="CreateAdvert\CreateAdvertViewModel.cs" />
+    <Compile Include="CreateAdvert\ICreateAdvertView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

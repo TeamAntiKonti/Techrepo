@@ -490,6 +490,7 @@
     <Folder Include="Account\Additionals\" />
     <Folder Include="App_Data\" />
     <Folder Include="EventArgs\" />
+    <Folder Include="images\AdvertsPhotos\" />
     <Folder Include="Models\" />
     <Folder Include="Presenters\" />
     <Folder Include="Services\" />

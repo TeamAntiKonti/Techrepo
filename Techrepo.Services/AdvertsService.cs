@@ -21,5 +21,11 @@ namespace Techrepo.Services
         {
             return this.techrepoContext.Adverts;
         }
+
+        public void CreateAdvert(Advert advert)
+        {
+            this.techrepoContext.Adverts.Add(advert);
+            this.techrepoContext.SaveChanges();
+        }
     }
 }

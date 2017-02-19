@@ -42,11 +42,16 @@ namespace Techrepo.Models
             }
         }
 
+        public string Photos { get; set; }
+
         //[Required]
         public string OwnerEmail { get; set; }
 
         //[Required]
         public string OwnerPhone { get; set; }
+
+        public int? CityId { get; set; }
+        public virtual City City { get; set; }
 
         public int? CategoryId { get; set; }
         public virtual AdvertCategory Category { get; set; }

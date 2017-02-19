@@ -10,5 +10,6 @@ namespace Techrepo.Services
     public interface IAdvertsService
     {
         IQueryable<Advert> GetAllAdverts();
+        void CreateAdvert(Advert advert);
     }
 }
