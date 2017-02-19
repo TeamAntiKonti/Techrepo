@@ -7,7 +7,7 @@
 
         <div>
             <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-                <%--<p class="text-success"><%: SuccessMessage %></p>--%>
+                <p class="text-success"><%: SuccessMessage %></p>
             </asp:PlaceHolder>
         </div>
 
