@@ -3,8 +3,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Models;
 using Techrepo.MVP.Adverts;
 using Techrepo.Services;
@@ -17,6 +15,7 @@ namespace Techrepo.Tests.Mvp.Adverts
         [Test]
         public void View_OnAdvertsGetData_ShouldAddAdvertsToViewModel_WhenEventIsRaised()
         {
+            //Arrange
             var viewMock = new Mock<IAdvertsView>();
             viewMock.Setup(v => v.Model).Returns(new AdvertsViewModel());
             var allAdverts = GetAllTheAdverts();
@@ -24,7 +23,10 @@ namespace Techrepo.Tests.Mvp.Adverts
             advertsServiceMock.Setup(a => a.GetAllAdverts()).Returns(allAdverts);
             var advertsPresenter = new AdvertsPresenter(viewMock.Object, advertsServiceMock.Object);
 
+            //Act
             viewMock.Raise(v => v.OnAdvertsGetData += null, EventArgs.Empty);
+
+            //Assert
             CollectionAssert.AreEquivalent(allAdverts, viewMock.Object.Model.Adverts);
         }
 

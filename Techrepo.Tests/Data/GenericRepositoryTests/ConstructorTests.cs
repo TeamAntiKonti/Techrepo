@@ -1,10 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Data;
 using Techrepo.Models;
 using Techrepo.Tests.Data.Fakes;
@@ -21,24 +17,29 @@ namespace Techrepo.Tests.Data.GenericRepositoryTests
             var techDbContext = (ITechrepoDbContext)null;
 
             //Act & Assert
-            Assert.Throws<ArgumentException>(() => new GenericRepository<AdvertCategory>(techDbContext));           
+            Assert.Throws<ArgumentException>(() => new GenericRepository<AdvertCategory>(techDbContext));
         }
 
         [Test]
         public void GenericRepoConstructor_ShouldSetInstanceOfFakeGenericRepository()
         {
+            //Arrange
             var techDbContext = new Mock<ITechrepoDbContext>();
+
+            //Act
             var genericRepo = new FakeGenericRepository<AdvertCategory>(techDbContext.Object);
 
+            //Assert
             Assert.IsInstanceOf<FakeGenericRepository<AdvertCategory>>(genericRepo);
         }
         [Test]
         public void GenericRepoConstructor_ShouldNotThrowExceptionWhenCorrectValuesArePassed()
         {
+            //Arrange
             var techDbContext = new Mock<ITechrepoDbContext>();
-            
+
             //Act & Assert
-            Assert.DoesNotThrow(()=> new FakeGenericRepository<AdvertCategory>(techDbContext.Object));
+            Assert.DoesNotThrow(() => new FakeGenericRepository<AdvertCategory>(techDbContext.Object));
         }
         [Test]
         public void GenericRepoConstructor_ShouldSetPropertyCorrectlyForContext()
@@ -46,9 +47,11 @@ namespace Techrepo.Tests.Data.GenericRepositoryTests
             //Arrange
             var techDbContext = new Mock<ITechrepoDbContext>();
 
+            //Act
             var genericRepo = new FakeGenericRepository<AdvertCategory>(techDbContext.Object);
+
             //Act & Assert
-            Assert.AreSame(techDbContext.Object,genericRepo.Context);
+            Assert.AreSame(techDbContext.Object, genericRepo.Context);
         }
         [Test]
         public void GenericRepoConstructor_ShouldSetPropertyCorrectlyForDbSet()
@@ -56,7 +59,9 @@ namespace Techrepo.Tests.Data.GenericRepositoryTests
             //Arrange
             var techDbContext = new Mock<ITechrepoDbContext>();
 
+            //Act
             var genericRepo = new FakeGenericRepository<AdvertCategory>(techDbContext.Object);
+
             //Act & Assert
             Assert.AreSame(techDbContext.Object.Set<AdvertCategory>(), genericRepo.DbSet);
         }
