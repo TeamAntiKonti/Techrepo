@@ -81,6 +81,9 @@
     <Compile Include="Data\Fakes\FakeGenericRepository.cs" />
     <Compile Include="Data\GenericRepositoryTests\ConstructorTests.cs" />
     <Compile Include="Data\GenericRepositoryTests\GetByIdTests.cs" />
+    <Compile Include="Data\UnifOfWork\CommitTests.cs" />
+    <Compile Include="Data\UnifOfWork\ConstructorTests.cs" />
+    <Compile Include="Data\UnifOfWork\DisposeTests.cs" />
     <Compile Include="Models\AdvertsTests.cs" />
     <Compile Include="Models\CategoryTests.cs" />
     <Compile Include="Models\CityTests.cs" />
