@@ -36,6 +36,7 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
@@ -77,6 +78,9 @@
     <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Fakes\FakeGenericRepository.cs" />
+    <Compile Include="Data\GenericRepositoryTests\ConstructorTests.cs" />
+    <Compile Include="Data\GenericRepositoryTests\GetByIdTests.cs" />
     <Compile Include="Models\AdvertsTests.cs" />
     <Compile Include="Models\CategoryTests.cs" />
     <Compile Include="Models\CityTests.cs" />
@@ -84,6 +88,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Techrepo.Data\Techrepo.Data.csproj">
+      <Project>{B0F35075-845B-49FD-9405-6826FCC52177}</Project>
+      <Name>Techrepo.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Techrepo.Models\Techrepo.Models.csproj">
       <Project>{81D0404E-A318-4F45-AB68-5E5FA844A211}</Project>
       <Name>Techrepo.Models</Name>
