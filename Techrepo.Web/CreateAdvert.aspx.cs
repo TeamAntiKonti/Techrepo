@@ -59,6 +59,7 @@ namespace Techrepo.Web
 
                 var selectedDelivery = this.Delivery.SelectedItem.Text;
 
+                string photosUrl = "";
 
                 if (UploadedImages.HasFiles)
                 {
@@ -96,9 +97,11 @@ namespace Techrepo.Web
 
                             foreach (var photo in UploadedImages.PostedFiles)
                             {
-                                filename = id.ToString() + "/" + Path.GetFileName(photo.FileName);                                
-                                photo.SaveAs(Server.MapPath("~/images/AdvertsPhotos/") + filename);
+                                filename = id.ToString() + "/" + Path.GetFileName(photo.FileName);
+                                string saveDirectory = Server.MapPath("~/images/AdvertsPhotos/") + filename;
+                                photo.SaveAs(saveDirectory);
                                 StatusLabel.Text = "Upload status: File uploaded!";
+                                photosUrl += (saveDirectory + ";");
                             }
                         }
                     }
@@ -122,7 +125,8 @@ namespace Techrepo.Web
                     OwnerPhone = this.OwnerPhone.Text,
                     OwnerEmail = this.OwnerEmail.Text,
                     Delivery = selectedDelivery,
-                    ProductState = selectedState
+                    ProductState = selectedState,
+                    Photos = photosUrl
                 };
 
                 this.OnCreateAdvert?.Invoke(this, new CreateAdvertEventArgs(advert));
