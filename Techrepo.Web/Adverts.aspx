@@ -13,10 +13,16 @@
 
         <ItemTemplate>
             <div class="col-md-4">
-                <a href=""><h1><%#: Item.Title %></h1>
+                
+                            <asp:HyperLink NavigateUrl='<%# string.Format("~/advertdetails.aspx?id={0}", Item.Id) %>' runat="server">
+                                
+                       
+                    <h1><%#: Item.Title %></h1>
+                                
                     <!-- Yeah i know-->
-                    <img src="<%#:Item.Photos.Split(';')[0].Substring(Item.Photos.Split(';')[0].IndexOf("images")) %>" height="100"/>
-                    </a>
+                    <img src="<%#:Item.Photos.Split(';')[0].Substring(Item.Photos.Split(';')[0].IndexOf("images")) %>" height="100" alt="Techrepo advert"/>
+                    </asp:HyperLink>
+                                </a>
                 <br />
                 <h3><span class="glyphicon glyphicon-piggy-bank"> <%#: Item.Price %>лв.</span></h3>
                 <h3><span class="glyphicon glyphicon-tag"></span> <%#: Item.ProductState %></h3>

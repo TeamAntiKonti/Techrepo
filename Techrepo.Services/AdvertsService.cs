@@ -27,5 +27,10 @@ namespace Techrepo.Services
             this.techrepoContext.Adverts.Add(advert);
             this.techrepoContext.SaveChanges();
         }
+
+        public Advert GetById(int? id)
+        {
+            return id.HasValue ? this.techrepoContext.Adverts.Find(id) : null;
+        }
     }
 }

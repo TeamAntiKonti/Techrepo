@@ -11,5 +11,8 @@ namespace Techrepo.Services
     {
         IQueryable<Advert> GetAllAdverts();
         void CreateAdvert(Advert advert);
+
+        Advert GetById(int? id);
+
     }
 }

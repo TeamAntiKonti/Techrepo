@@ -207,6 +207,7 @@
     <Content Include="Administration\Category\Create.aspx" />
     <Content Include="Administration\City\Create.aspx" />
     <Content Include="AdminPanel.aspx" />
+    <Content Include="AdvertDetails.aspx" />
     <Content Include="Adverts.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="AdminPanel.aspx.designer.cs">
       <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdvertDetails.aspx.cs">
+      <DependentUpon>AdvertDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdvertDetails.aspx.designer.cs">
+      <DependentUpon>AdvertDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Adverts.aspx.cs">
       <DependentUpon>Adverts.aspx</DependentUpon>

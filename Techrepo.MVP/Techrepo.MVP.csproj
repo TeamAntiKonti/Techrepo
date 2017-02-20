@@ -57,6 +57,10 @@
     <Compile Include="AdminPanel\CreateCategoryEventArgs.cs" />
     <Compile Include="AdminPanel\CreateCityEventArgs.cs" />
     <Compile Include="AdminPanel\IAdminPanelView.cs" />
+    <Compile Include="AdvertDetails\AdvertDetailsEventArgs.cs" />
+    <Compile Include="AdvertDetails\AdvertDetailsPresenter.cs" />
+    <Compile Include="AdvertDetails\AdvertDetailsViewModel.cs" />
+    <Compile Include="AdvertDetails\IAdvertDetailsView.cs" />
     <Compile Include="Adverts\AdvertsPresenter.cs" />
     <Compile Include="Adverts\AdvertsViewModel.cs" />
     <Compile Include="Adverts\IAdvertsView.cs" />
@@ -70,9 +74,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdvertDetails\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Techrepo.Models\Techrepo.Models.csproj">
       <Project>{81D0404E-A318-4F45-AB68-5E5FA844A211}</Project>
