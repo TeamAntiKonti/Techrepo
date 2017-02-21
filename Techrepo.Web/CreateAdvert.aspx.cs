@@ -98,10 +98,10 @@ namespace Techrepo.Web
                             foreach (var photo in UploadedImages.PostedFiles)
                             {
                                 filename = id.ToString() + "/" + Path.GetFileName(photo.FileName);
-                                string saveDirectory = Server.MapPath("~/images/AdvertsPhotos/") + filename;
+                                string saveDirectory = Server.MapPath("/images/AdvertsPhotos/") + filename;
                                 photo.SaveAs(saveDirectory);
                                 StatusLabel.Text = "Upload status: File uploaded!";
-                                photosUrl += (saveDirectory + ";");
+                                photosUrl += ("/images/AdvertsPhotos/" + filename + ";");
                             }
                         }
                     }

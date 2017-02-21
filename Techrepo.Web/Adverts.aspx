@@ -20,7 +20,10 @@
                     <h1><%#: Item.Title %></h1>
                                 
                     <!-- Yeah i know-->
-                    <img src="<%#:Item.Photos.Split(';')[0].Substring(Item.Photos.Split(';')[0].IndexOf("images")) %>" height="100" alt="Techrepo advert"/>
+                   
+                                <p><%#:Item.Photos.Split(';')[0] %></p>
+                                <img src="<%#:Item.Photos.Split(';')[0] %>" height="100" alt="Techrepo advert"/>
+
                     </asp:HyperLink>
                                 </a>
                 <br />
