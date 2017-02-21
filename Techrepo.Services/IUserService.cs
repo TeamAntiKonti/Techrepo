@@ -7,5 +7,6 @@ namespace Techrepo.Services
     {
         User GetUserById(string id);
         void UpdateAvatarByUserId(string id, string path);
+        void UpdateUserInfo(User user, string userId);
     }
 }

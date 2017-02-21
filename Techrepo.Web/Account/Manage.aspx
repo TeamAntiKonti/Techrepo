@@ -3,61 +3,75 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    
-    <div>
-        <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
-        </asp:PlaceHolder>
-    </div>
-        
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-horizontal">
-                <h4>Change your account settings</h4>
-                <hr />
-                
-                <div class="form-group">
-                    <div class="col-md-3">
 
-                        <asp:Image Width="200" Height="200" CssClass="img-responsive control-label" ImageUrl="<%# this.AvatarUrl %>" runat="server" />
-                    
-                        <asp:Label runat="server" AssociatedControlID="Avatar" CssClass="control-label">Avatar</asp:Label>                    
-                        <div>
-                            <asp:FileUpload CssClass="control-label" runat="server" ID="Avatar"></asp:FileUpload>
-                        </div>
-                        <p class="text-danger">
-                            <asp:Literal runat="server" ID="ErrorMessage" />
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="control-label">First name</asp:Label>
-                        <div>
-                            <asp:TextBox runat="server" ID="FirstName" CssClass="form-control"/>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="FIrstName"
-                                CssClass="text-danger" ErrorMessage="The first name field is required." />
-                        </div>
-                        <asp:Label runat="server" AssociatedControlID="LastName" CssClass="control-label">Last name</asp:Label>
-                        <div>
-                            <asp:TextBox runat="server" ID="LastName" CssClass="form-control"/>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
-                                CssClass="text-danger" ErrorMessage="The last name field is required." />
-                        </div>
-
-                        <dl class="col-md-2 control-label">
-                            <dt>Password:</dt>
-                            <dd>
-                                <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
-                                <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
-                            </dd>                                       
-                        </dl>
-                    </div>
-                </div>
-                
-                
-                <asp:Button CssClass="btn btn-success pull-left" Width="150" Text="Update" runat="server" OnClick="UpdateUserProfile" />
+        <asp:FormView runat="server" ID="UserForm"
+        SelectMethod="GetUserInfo"       
+        UpdateMethod="UpdateUserProfile"
+        ItemType="Techrepo.Models.User"
+            
+        DataKeyNames="Id">
+        <ItemTemplate>
+            <h3>Profile Information</h3>
+            <hr />
+            <div class="col-md-6">
+                <label >Full name: </label>
+                <strong><asp:Label Text="<%#:Item.FirstName %>" runat="server" /></strong>
+                <strong><asp:Label Text="<%#:Item.LastName %>" runat="server" /></strong>
             </div>
-        </div>
-    </div>
+            <div class="col-md-10">
+                <label >Username: </label>
+                <strong><asp:Label  Text="<%#:Item.UserName %>" runat="server" /></strong>
+
+            </div>
+            <div class="col-md-6">
+                <label>Email: </label>
+                <strong><asp:Label Text="<%#:Item.Email %>" runat="server" /></strong>
+            </div>
+            
+            <div class="col-md-10">
+                <asp:Image Width="200" Height="200" CssClass="img-responsive control-label" ImageUrl="<%# Item.AvatartPath %>" runat="server" />
+            </div>  
+            <div class="col-md-6">
+                <asp:Button runat="server" Text="Edit" CommandName="Edit" CssClass="btn btn-warning" />
+
+            </div> 
+        </ItemTemplate>
+        <EditItemTemplate>
+            <h3>Edit Profile</h3>
+            <hr />
+            <asp:Label runat="server" AssociatedControlID="EditFirstName" Text="First name:"></asp:Label>
+            <asp:TextBox runat="server" ID="EditFirstName" Text="<%# BindItem.FirstName %>" CssClass="form-control"></asp:TextBox>
+            <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditFirstName" 
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,20}$" Text="Minimum 3 and maximum 20 characters required." />
+
+            <asp:Label runat="server" AssociatedControlID="EditLastName" Text="Last name:"></asp:Label>
+            <asp:TextBox runat="server" ID="EditLastName" Text="<%# BindItem.LastName %>" CssClass="form-control"></asp:TextBox>
+            <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditLastName" 
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,500}$" Text="Minimum 3 and maximum 500 characters required."  />
+           
+            <asp:Label runat="server" AssociatedControlID="EditUsername" Text="Username:"></asp:Label>
+            <asp:TextBox runat="server" ID="EditUsername" Text="<%# BindItem.UserName %>" CssClass="form-control"></asp:TextBox>
+            <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditUsername" 
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,500}$" Text="Minimum 3 and maximum 500 characters required."  />
+           
+            <dl class="col-md-2 control-label">
+                <dt>Password:</dt>
+                <dd>
+                    <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="true" ID="ChangePassword" runat="server" />
+                </dd>                                       
+            </dl>
+
+            <div>
+                <asp:FileUpload CssClass="control-label" runat="server" ID="Avatar"></asp:FileUpload>
+            </div>
+            <p class="text-danger">
+                <asp:Literal runat="server" ID="ErrorMessage" />
+            </p>
+
+            <asp:Button runat="server" Text="Update" CommandName="Update" CssClass="btn btn-primary" />
+            <asp:Button runat="server" Text="Cancel" CommandName="Cancel" CssClass="btn btn-danger" />
+        </EditItemTemplate>
+        
+    </asp:FormView>
 
 </asp:Content>

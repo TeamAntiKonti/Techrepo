@@ -41,5 +41,14 @@ namespace Techrepo.Services
 
             this.unitOfWork.Commit();            
         }
+
+        public void UpdateUserInfo(User user, string userId)
+        {
+            User userToBeUpdated = this.repository.GetById(userId);
+            userToBeUpdated.FirstName = user.FirstName;
+            userToBeUpdated.LastName = user.LastName;
+
+            this.unitOfWork.Commit();
+        }
     }
 }

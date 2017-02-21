@@ -86,7 +86,7 @@
                         </RoleGroups>
 
                     </asp:LoginView>
-                    <asp:LoginView ID="LoginView2" runat="server">
+                    <%--<asp:LoginView ID="LoginView2" runat="server">
                         <RoleGroups>
                             <asp:RoleGroup Roles="Admin">
                                 <ContentTemplate>
@@ -96,7 +96,7 @@
                                 </ContentTemplate>
                             </asp:RoleGroup>
                         </RoleGroups>
-                    </asp:LoginView>
+                    </asp:LoginView>--%>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
         
     </form>
     
-    <footer class="navbar navbar-fixed-bottom text-center">
+    <footer class="navbar navbar-bottom text-center">
         <hr /> 
         <p class="text-muted credit">&copy; <%: DateTime.Now.Year %> - Techrepo</p>
     </footer>

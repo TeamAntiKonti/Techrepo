@@ -206,7 +206,6 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Administration\Category\Create.aspx" />
     <Content Include="Administration\City\Create.aspx" />
-    <Content Include="AdminPanel.aspx" />
     <Content Include="AdvertDetails.aspx" />
     <Content Include="Adverts.aspx" />
     <Content Include="Contact.aspx" />
@@ -288,6 +287,7 @@
     <Compile Include="Account\EventArgs\LoginEventArgs.cs" />
     <Compile Include="Account\EventArgs\RegisterEventArgs.cs" />
     <Compile Include="Account\EventArgs\SignInEventArgs.cs" />
+    <Compile Include="Account\EventArgs\UserDetailsEventArgs.cs" />
     <Compile Include="Account\Models\LoginViewModel.cs" />
     <Compile Include="Account\Models\ManageProfileVIewModel.cs" />
     <Compile Include="Account\Models\RegisterViewModel.cs" />
@@ -310,13 +310,6 @@
     </Compile>
     <Compile Include="Administration\City\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPanel.aspx.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPanel.aspx.designer.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdvertDetails.aspx.cs">
       <DependentUpon>AdvertDetails.aspx</DependentUpon>
