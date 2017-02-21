@@ -32,19 +32,20 @@ namespace Techrepo.Web
             return this.Model.Adverts;
         }
 
-<<<<<<< HEAD
+
         protected void LinkButtonSearch_Click(object sender, EventArgs e)
         {
             string textToSearchFor = this.TextBoxSearchParam.Text;
             string queryParam = string.IsNullOrEmpty(textToSearchFor) ? string.Empty : string.Format("?q={0}", textToSearchFor);
             Response.Redirect("~/search" + queryParam);
-=======
+        }
+
         protected void Delete_Click(object sender, CommandEventArgs e)
         {
             int id = int.Parse((string)e.CommandArgument);
 
             this.OnDeleteAdvert?.Invoke(this, new IdEventArgs(id));
->>>>>>> 663d7666978c5005813f94786b94f8d7f4d58f77
+
         }
     }
 }
