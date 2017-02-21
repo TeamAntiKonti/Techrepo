@@ -2,10 +2,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="back-link">
-        <a href="/adverts">Back to adverts</a>
-    </div>
-
+     <nav aria-label="whatever">
+  <ul class="pager">
+    <li class="previous"><a href="/adverts"><span aria-hidden="true">&larr;</span> Back to adverts</a></li>
+  </ul>
+</nav>
     <asp:FormView runat="server" ID="FormViewAdvertDetails" ItemType="Techrepo.Models.Advert" SelectMethod="FormViewAdvertDetails_GetItem">
 
         <ItemTemplate>

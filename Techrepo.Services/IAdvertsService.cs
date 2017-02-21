@@ -14,5 +14,7 @@ namespace Techrepo.Services
 
         Advert GetById(int? id);
 
+        IQueryable<Advert> GetAdvertByTitleOrDescription(string searchTerm);
+
     }
 }

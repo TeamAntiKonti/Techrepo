@@ -1,29 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Adverts.aspx.cs" Inherits="Techrepo.Web.Adverts" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Search.aspx.cs" MasterPageFile="~/Site.Master" Inherits="Techrepo.Web.Search" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="search-button">
-            <div class="form-search">
-                <div class="input-append">
-                    <asp:TextBox runat="server" ID="TextBoxSearchParam" type="text" name="q" class="col-md-3 search-query" placeholder="Search by advert title or description"></asp:TextBox>
-                    <asp:LinkButton runat="server" ID="LinkButtonSearch"
-                        OnClick="LinkButtonSearch_Click" CssClass="btn  btn-primary" Text="Search"></asp:LinkButton>
-                </div>
-            </div>
-        </div>
-   
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:ListView runat="server"
-        ID="ListViewAdverts"
-        ItemType="Techrepo.Models.Advert"
-        SelectMethod="ListViewAdverts_GetData"
-        GroupItemCount="3">
-        <GroupTemplate>
-            <div class="row">
-                <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
-            </div>
-        </GroupTemplate>
+    <div class="col-md-12">
+        <h1><%: Title %>
+            <asp:Literal runat="server" ID="LiteralSearchQuery" Mode="Encode"></asp:Literal></h1>
+    </div>
 
+
+    <nav aria-label="whatever">
+  <ul class="pager">
+    <li class="previous"><a href="/adverts"><span aria-hidden="true">&larr;</span> Back to adverts</a></li>
+  </ul>
+</nav>
+
+    <asp:Repeater runat="server" ID="repeater" ItemType="Techrepo.Models.Advert" SelectMethod="Repeater_GetData">
+        <HeaderTemplate>
+            <ul>
+        </HeaderTemplate>
         <ItemTemplate>
+           <%-- <li>
+                <asp:HyperLink NavigateUrl='<%# string.Format("/advertdetails.aspx?id={0}", Item.Id) %>' runat="server" ID="HyperLinkAdvert" Text='<%# string.Format(@"""{0}"" by <i>{1}</i>", Item.Title, Item.Price) %>' />
+                (State: <%#: Item.ProductState %>)                 
+            </li>--%>
+            <!-- ///////////////////////////////////////////////////////////////////-->
+       <%-- <ItemTemplate>--%>
             <div class="card col-md-4">
                 <asp:HyperLink NavigateUrl='<%# string.Format("~/advertdetails.aspx?id={0}", Item.Id) %>' runat="server">
                     <img class="card-img-top" src="<%#:Item.Photos.Split(';')[0] %>" alt="Techrepo advert" height="100">
@@ -54,10 +55,12 @@
 
 
             </div>--%>
+        <!-- ////////////////************************-->
         </ItemTemplate>
-        <GroupSeparatorTemplate>
-            <hr />
-        </GroupSeparatorTemplate>
-    </asp:ListView>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
 
+   
 </asp:Content>

@@ -10,33 +10,24 @@
 namespace Techrepo.Web {
     
     
-    public partial class Adverts {
+    public partial class Search {
         
         /// <summary>
-        /// TextBoxSearchParam control.
+        /// LiteralSearchQuery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchParam;
+        protected global::System.Web.UI.WebControls.Literal LiteralSearchQuery;
         
         /// <summary>
-        /// LinkButtonSearch control.
+        /// repeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonSearch;
-        
-        /// <summary>
-        /// ListViewAdverts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewAdverts;
+        protected global::System.Web.UI.WebControls.Repeater repeater;
     }
 }

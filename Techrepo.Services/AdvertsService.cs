@@ -32,5 +32,14 @@ namespace Techrepo.Services
         {
             return id.HasValue ? this.techrepoContext.Adverts.Find(id) : null;
         }
+
+        public IQueryable<Advert> GetAdvertByTitleOrDescription(string searchTerm)
+        {
+            return string.IsNullOrEmpty(searchTerm) ?this.techrepoContext.Adverts
+                :this.techrepoContext.Adverts.Where(a=>
+                (string.IsNullOrEmpty(a.Title) ? false : a.Title.Contains(searchTerm))
+                ||
+                (string.IsNullOrEmpty(a.Description)?false:a.Description.Contains(searchTerm)));
+        }
     }
 }

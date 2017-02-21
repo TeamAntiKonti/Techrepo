@@ -69,6 +69,10 @@
     <Compile Include="CreateAdvert\CreateAdvertViewModel.cs" />
     <Compile Include="CreateAdvert\ICreateAdvertView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\ISearchView.cs" />
+    <Compile Include="Search\SearchEventArgs.cs" />
+    <Compile Include="Search\SearchPresenter.cs" />
+    <Compile Include="Search\SearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

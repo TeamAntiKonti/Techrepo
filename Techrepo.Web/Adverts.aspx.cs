@@ -28,5 +28,12 @@ namespace Techrepo.Web
             this.OnAdvertsGetData?.Invoke(this, null);
             return this.Model.Adverts;
         }
+
+        protected void LinkButtonSearch_Click(object sender, EventArgs e)
+        {
+            string textToSearchFor = this.TextBoxSearchParam.Text;
+            string queryParam = string.IsNullOrEmpty(textToSearchFor) ? string.Empty : string.Format("?q={0}", textToSearchFor);
+            Response.Redirect("~/search" + queryParam);
+        }
     }
 }
