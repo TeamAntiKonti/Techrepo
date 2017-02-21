@@ -91,7 +91,7 @@
                                         <li><a runat="server" href="~/Administration/Category/Create.aspx">Create Category</a></li>
                                     </ul>  
                                     <ul class="nav navbar-nav">
-                                        <li><a runat="server" href="~/Administration/City/Create.aspx">Create Advert</a></li>
+                                        <li><a runat="server" href="~/Administration/City/Create.aspx">Create City</a></li>
                                     </ul>                                                                      
                                 </ContentTemplate>
                             </asp:RoleGroup>
