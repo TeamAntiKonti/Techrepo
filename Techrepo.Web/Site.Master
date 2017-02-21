@@ -65,7 +65,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>                                
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -79,8 +79,20 @@
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav">
                                         <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
-
-                                    </ul>
+                                    </ul>                                                                                                            
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Admin">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
+                                    </ul>    
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/Administration/Category/Create.aspx">Create Category</a></li>
+                                    </ul>  
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/Administration/City/Create.aspx">Create Advert</a></li>
+                                    </ul>                                                                      
                                 </ContentTemplate>
                             </asp:RoleGroup>
                         </RoleGroups>
