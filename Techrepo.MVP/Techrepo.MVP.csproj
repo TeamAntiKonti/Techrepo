@@ -55,8 +55,6 @@
     <Compile Include="Administration\City\Create\IdEventArgs.cs" />
     <Compile Include="AdminPanel\AdminPanelPresenter.cs" />
     <Compile Include="AdminPanel\AdminPanelViewModel.cs" />
-    <Compile Include="AdminPanel\CreateCategoryEventArgs.cs" />
-    <Compile Include="AdminPanel\CreateCityEventArgs.cs" />
     <Compile Include="AdminPanel\IAdminPanelView.cs" />
     <Compile Include="AdvertDetails\AdvertDetailsEventArgs.cs" />
     <Compile Include="AdvertDetails\AdvertDetailsPresenter.cs" />

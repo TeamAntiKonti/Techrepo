@@ -21,11 +21,6 @@ namespace Techrepo.Web.Administration.CreateCityNamespace
             private set;
         }
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public IQueryable<City> ListView1_GetData()
         {
             this.OnGetAllCities?.Invoke(this, null);

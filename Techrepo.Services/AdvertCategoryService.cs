@@ -32,14 +32,36 @@ namespace Techrepo.Services
             return this.repository.GetAll();
         }
 
-        public void CreateNewCategory(string adCategoryName)
+        public void CreateNewCategory(AdvertCategory adCategory)
         {
-            //should it be like this?
-            AdvertCategory newAd = new AdvertCategory();
-            newAd.Name = adCategoryName;
-
-            this.repository.Add(newAd);
+            this.repository.Add(adCategory);
             this.unitOfWork.Commit();            
+        }
+
+        public IQueryable<AdvertCategory> GetAllCategoriesSorted()
+        {
+            return this.repository.All();
+        }
+
+        public AdvertCategory GetById(int id)
+        {
+            return this.repository.GetById(id);
+        }
+
+        public void UpdateCategory(AdvertCategory c)
+        {
+            AdvertCategory categoryToBeUpdated = this.GetById(c.Id);
+            categoryToBeUpdated = c;
+
+            this.unitOfWork.Commit();
+        }
+
+        public void DeleteCategory(int id)
+        {
+            AdvertCategory adToBeDeleted = this.GetById(id);
+            this.repository.Delete(adToBeDeleted);
+
+            this.unitOfWork.Commit();
         }
     }
 }
