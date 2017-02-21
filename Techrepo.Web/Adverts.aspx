@@ -16,6 +16,7 @@
         ID="ListViewAdverts"
         ItemType="Techrepo.Models.Advert"
         SelectMethod="ListViewAdverts_GetData"
+        OnItemDataBound="ListView_ItemDataBound"
         GroupItemCount="3">
         <GroupTemplate>
             <div class="row">
@@ -36,7 +37,7 @@
 
                     </p>
                     <a href="<%# string.Format("/advertdetails.aspx?id={0}", Item.Id) %>" class="btn btn-primary">View Details</a>
-                    <asp:Button runat="server" CommandArgument='<%# Eval("Id") %>' CommandName="Del" Text="Delete" OnCommand="Delete_Click" CssClass="btn btn-danger"/>
+                    <asp:Button runat="server" ID="BtnDel" CommandArgument='<%# Eval("Id") %>' CommandName="Del" Text="Delete" OnCommand="Delete_Click" CssClass="hidden"/>
                 </div>
             </div>
 

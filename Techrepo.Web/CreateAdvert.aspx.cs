@@ -130,6 +130,8 @@ namespace Techrepo.Web
                 };
 
                 this.OnCreateAdvert?.Invoke(this, new CreateAdvertEventArgs(advert));
+
+                Response.Redirect("/Adverts");
             }
         }
     }
