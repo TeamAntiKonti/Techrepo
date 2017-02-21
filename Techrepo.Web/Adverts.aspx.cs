@@ -14,6 +14,18 @@ namespace Techrepo.Web
     {
         public event EventHandler OnAdvertsGetData;
         public event EventHandler<IdEventArgs> OnDeleteAdvert;
+
+        public void ListView_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (this.Context.User.IsInRole("Admin"))
+            {
+                if (e.Item.ItemType == ListViewItemType.DataItem)
+                {
+                    var btn = (Button)e.Item.FindControl("BtnDel");
+                    btn.CssClass = "visible btn btn-danger";
+                }                
+            }
+        }
         public IQueryable<Advert> ListViewAdverts_GetData()
         {
             this.OnAdvertsGetData?.Invoke(this, null);
