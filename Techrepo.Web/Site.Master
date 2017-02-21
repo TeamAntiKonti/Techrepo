@@ -65,7 +65,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>                                
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -79,14 +79,26 @@
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav">
                                         <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
-
-                                    </ul>
+                                    </ul>                                                                                                            
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Admin">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/CreateAdvert">Create Advert</a></li>
+                                    </ul>    
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/Administration/Category/Create.aspx">Create Category</a></li>
+                                    </ul>  
+                                    <ul class="nav navbar-nav">
+                                        <li><a runat="server" href="~/Administration/City/Create.aspx">Create Advert</a></li>
+                                    </ul>                                                                      
                                 </ContentTemplate>
                             </asp:RoleGroup>
                         </RoleGroups>
 
                     </asp:LoginView>
-                    <asp:LoginView ID="LoginView2" runat="server">
+                    <%--<asp:LoginView ID="LoginView2" runat="server">
                         <RoleGroups>
                             <asp:RoleGroup Roles="Admin">
                                 <ContentTemplate>
@@ -96,7 +108,7 @@
                                 </ContentTemplate>
                             </asp:RoleGroup>
                         </RoleGroups>
-                    </asp:LoginView>
+                    </asp:LoginView>--%>
                 </div>
             </div>
         </div>
@@ -109,7 +121,7 @@
         
     </form>
     
-    <footer class="navbar navbar-fixed-bottom text-center">
+    <footer class="navbar navbar-bottom text-center">
         <hr /> 
         <p class="text-muted credit">&copy; <%: DateTime.Now.Year %> - Techrepo</p>
     </footer>

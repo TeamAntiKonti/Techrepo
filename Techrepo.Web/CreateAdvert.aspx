@@ -7,43 +7,43 @@
     <div class="form-horizontal">              
         <div class="form-group">
             <asp:Label ID="Label1" AssociatedControlID="AdvertTitle" CssClass="control-label" runat="server">Title: </asp:Label>
-            <asp:TextBox Width="180" ID="AdvertTitle" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="form-control" Width="180" ID="AdvertTitle" runat="server"></asp:TextBox>
         </div>
         
         <div class="form-group">
             <asp:Label ID="Label3" AssociatedControlID="AdvertPrice" CssClass="control-label" runat="server">Price: </asp:Label>
-            <asp:TextBox Width="180" ID="AdvertPrice" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="form-control" Width="180" ID="AdvertPrice" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <asp:Label ID="Label4" AssociatedControlID="OwnerEmail" CssClass="control-label" runat="server">Email: </asp:Label>
-            <asp:TextBox Width="180" ID="OwnerEmail" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="form-control" Width="180" ID="OwnerEmail" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <asp:Label ID="Label5" AssociatedControlID="OwnerPhone" CssClass="control-label" runat="server" >Phone: </asp:Label>
-            <asp:TextBox Width="180" ID="OwnerPhone" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="form-control" Width="180" ID="OwnerPhone" runat="server"></asp:TextBox>
         </div>
         <div class="form-group">
             <asp:Label AssociatedControlID="Category" ID="Label6" CssClass="control-label" runat="server" >Category: </asp:Label>
-            <asp:DropDownList Width="180" CssClass="btn btn btn-default btn-sm" ID="Category" DataTextField="Name" DataValueField="Id" runat="server" ></asp:DropDownList>
+            <asp:DropDownList Width="180" CssClass="form-control btn btn btn-default btn-sm" ID="Category" DataTextField="Name" DataValueField="Id" runat="server" ></asp:DropDownList>
         </div>
         <div class="form-group">
             <asp:Label ID="Label9" AssociatedControlID="City" CssClass="control-label" runat="server" >City :</asp:Label>
-            <asp:DropDownList Width="180" CssClass="btn btn btn-default btn-sm" ID="City" DataTextField="Name" DataValueField="Id" runat="server" ></asp:DropDownList>
+            <asp:DropDownList Width="180" CssClass="form-control btn btn btn-default btn-sm" ID="City" DataTextField="Name" DataValueField="Id" runat="server" ></asp:DropDownList>
         </div>
         <div class="form-group">
             <asp:Label ID="Label7" AssociatedControlID="ProductState" CssClass="control-label" runat="server" >State: </asp:Label>
-            <asp:DropDownList Width="180" CssClass="btn btn btn-default btn-sm" ID="ProductState" runat="server" ></asp:DropDownList>
+            <asp:DropDownList Width="180" CssClass="form-control btn btn btn-default btn-sm" ID="ProductState" runat="server" ></asp:DropDownList>
         </div>
         <div class="form-group">
             <asp:Label ID="Label8" AssociatedControlID="Delivery" CssClass="control-label" runat="server" >Delivery: </asp:Label>
-            <asp:DropDownList Width="180" CssClass="btn btn btn-default btn-sm" ID="Delivery" runat="server" ></asp:DropDownList>
+            <asp:DropDownList Width="180" CssClass="form-control btn btn btn-default btn-sm" ID="Delivery" runat="server" ></asp:DropDownList>
         </div>               
     </div>
     </div>
     <div class="form-group col-md-4">
         <div class="form-group col-md-10">
             <asp:Label ID="Label2" AssociatedControlID="AdvertDescription" CssClass="col-md-10 control-label" runat="server" >Description: </asp:Label>
-            <asp:TextBox Width="300" TextMode="MultiLine" CssClass="col-md-10" Rows="7" ID="AdvertDescription" runat="server"></asp:TextBox>            
+            <asp:TextBox Width="300" TextMode="MultiLine" CssClass="form-control col-md-10" Rows="7" ID="AdvertDescription" runat="server"></asp:TextBox>            
         </div>
         <div class="form-group col-md-10">
             <asp:Label runat="server" AssociatedControlID="UploadedImages" CssClass="col-md-10 control-label">Images: </asp:Label>
@@ -54,7 +54,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <asp:Button runat="server" OnClick="CreateAdvert_Click" Text="Create" CssClass="btn btn-default" Width="200" />
+            <asp:Button runat="server" OnClick="CreateAdvert_Click" Text="Create" CssClass="form-control btn btn-default" Width="200" />
             <asp:Label runat="server" ID="StatusLabel" Text="" />
         
         </div>
