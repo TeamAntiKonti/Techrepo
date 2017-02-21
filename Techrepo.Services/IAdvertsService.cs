@@ -13,6 +13,6 @@ namespace Techrepo.Services
         void CreateAdvert(Advert advert);
 
         Advert GetById(int? id);
-
+        void DeleteAdvert(int id);
     }
 }

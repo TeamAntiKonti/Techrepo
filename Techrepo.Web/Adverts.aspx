@@ -25,6 +25,7 @@
 
                     </p>
                     <a href="<%# string.Format("/advertdetails.aspx?id={0}", Item.Id) %>" class="btn btn-primary">View Details</a>
+                    <asp:Button runat="server" CommandArgument='<%# Eval("Id") %>' CommandName="Del" Text="Delete" OnCommand="Delete_Click" CssClass="btn btn-danger"/>
                 </div>
             </div>
 

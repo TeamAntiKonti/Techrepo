@@ -1,4 +1,5 @@
 ﻿using System;
+using Techrepo.MVP.Administration.CreateCityNamespace;
 using Techrepo.Services;
 using WebFormsMvp;
 
@@ -14,6 +15,12 @@ namespace Techrepo.MVP.Adverts
             this.advertsService = advertsService;
 
             this.View.OnAdvertsGetData += this.View_OnAdvertsGetData;
+            this.View.OnDeleteAdvert += View_OnDeleteAdvert;
+        }
+
+        private void View_OnDeleteAdvert(object sender, IdEventArgs e)
+        {
+            this.advertsService.DeleteAdvert(e.Id);
         }
 
         private void View_OnAdvertsGetData(object sender,EventArgs e)

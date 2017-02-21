@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Data;
 using Techrepo.Models;
 
@@ -31,6 +28,14 @@ namespace Techrepo.Services
         public Advert GetById(int? id)
         {
             return id.HasValue ? this.techrepoContext.Adverts.Find(id) : null;
+        }
+
+        public void DeleteAdvert(int id)
+        {
+            Advert advertToBeDeleted = this.GetById(id);
+            this.techrepoContext.Adverts.Remove(advertToBeDeleted);
+
+            this.techrepoContext.SaveChanges();
         }
     }
 }
