@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Techrepo.Data;
 using Techrepo.Models;
 
@@ -33,6 +30,7 @@ namespace Techrepo.Services
             return id.HasValue ? this.techrepoContext.Adverts.Find(id) : null;
         }
 
+<<<<<<< HEAD
         public IQueryable<Advert> GetAdvertByTitleOrDescription(string searchTerm)
         {
             return string.IsNullOrEmpty(searchTerm) ?this.techrepoContext.Adverts
@@ -40,6 +38,14 @@ namespace Techrepo.Services
                 (string.IsNullOrEmpty(a.Title) ? false : a.Title.Contains(searchTerm))
                 ||
                 (string.IsNullOrEmpty(a.Description)?false:a.Description.Contains(searchTerm)));
+=======
+        public void DeleteAdvert(int id)
+        {
+            Advert advertToBeDeleted = this.GetById(id);
+            this.techrepoContext.Adverts.Remove(advertToBeDeleted);
+
+            this.techrepoContext.SaveChanges();
+>>>>>>> 663d7666978c5005813f94786b94f8d7f4d58f77
         }
     }
 }

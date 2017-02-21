@@ -13,8 +13,12 @@ namespace Techrepo.Services
         void CreateAdvert(Advert advert);
 
         Advert GetById(int? id);
+<<<<<<< HEAD
 
         IQueryable<Advert> GetAdvertByTitleOrDescription(string searchTerm);
 
+=======
+        void DeleteAdvert(int id);
+>>>>>>> 663d7666978c5005813f94786b94f8d7f4d58f77
     }
 }

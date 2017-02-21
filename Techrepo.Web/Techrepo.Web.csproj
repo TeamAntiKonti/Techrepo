@@ -538,7 +538,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\Additionals\" />
     <Folder Include="App_Data\" />
     <Folder Include="EventArgs\" />
     <Folder Include="images\AdvertsPhotos\" />
