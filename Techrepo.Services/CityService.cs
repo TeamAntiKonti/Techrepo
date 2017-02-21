@@ -33,7 +33,12 @@ namespace Techrepo.Services
             this.unitOfWork.Commit();
         }
 
-        public IQueryable<City> GetAllCities()
+        public IEnumerable<City> GetAllCities()
+        {
+            return this.repository.GetAll();
+        }
+
+        public IQueryable<City> GetAllCitiesSorted()
         {
             return this.repository.All().OrderBy(city => city.Name);
         }

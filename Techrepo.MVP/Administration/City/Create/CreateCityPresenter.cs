@@ -43,7 +43,7 @@ namespace Techrepo.MVP.Administration.CreateCityNamespace
 
         private void View_OnGetAllCities(object sender, EventArgs e)
         {
-            this.View.Model.Cities = this.cityService.GetAllCities();
+            this.View.Model.Cities = this.cityService.GetAllCitiesSorted();
         }
 
         private void View_OnCreateNewCity(object sender, EventArgs e)

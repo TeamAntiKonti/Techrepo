@@ -9,8 +9,8 @@ namespace Techrepo.Services
 {
     public interface ICityService
     {
-        IQueryable<City> GetAllCities();
-
+        IQueryable<City> GetAllCitiesSorted();
+        IEnumerable<City> GetAllCities();
         City GetById(int id);
         void CreateNewCity(City city);
         void UpdateCity(City city);
