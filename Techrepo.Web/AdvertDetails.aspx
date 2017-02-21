@@ -7,43 +7,52 @@
     </div>
 
     <asp:FormView runat="server" ID="FormViewAdvertDetails" ItemType="Techrepo.Models.Advert" SelectMethod="FormViewAdvertDetails_GetItem">
+
         <ItemTemplate>
-            
-                <h3 ><%#: Item.Title %></h3>
-                <div class="container">
-                    <div class="row" >
+
+            <h3 style="text-align: center"><%#: Item.Title %></h3>
+
+            <div class="container">
+                <div class="row">
 
 
+                    <div class="col-md-4">
+                        <asp:Repeater runat="server" DataSource="<%# Item.Photos.TrimEnd(';').Split(';').ToList()%>">
+                            <ItemTemplate>
 
-                        <div class="col">
-                            <asp:Repeater runat="server" DataSource="<%# Item.Photos.TrimEnd(';').Split(';').ToList()%>">
-                                <ItemTemplate>
-                                    <img src="<%# Container.DataItem %>" alt="Techrepo image" height="75" /></img>
-                                    <br />
-                                   
+                                <img src="<%# Container.DataItem %>" alt="Techrepo image" height="100" /></img>
+                                    <hr />
 
-                                </ItemTemplate>
-                               
-                            </asp:Repeater>
-                        </div>
-                        <div class="col">
-                            <h2 class="advert-title"><%#: Item.Description %></h2>
-                            <h2 class="advert-title"><%#: Item.Price %>лв.</h2>
-                            <h2><%#: Item.Delivery %></h2>
-                            <h2><%#: Item.ProductState %></h2>
-                            <h2><%#: Item.OwnerPhone %></h2>
-                            <h2><%#: Item.OwnerEmail %></h2>
-                            <h2><%#: Item.Owner.UserName %></h2>
-                        </div>
+
+                            </ItemTemplate>
+
+                        </asp:Repeater>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h2>Advert info:</h2>
+                        <h3><%#: Item.Description %></h3>
+                        <h3><span class="glyphicon glyphicon-piggy-bank"></span> <%#: Item.Price %>лв.</h3>
+                        <h3><span class="glyphicon glyphicon-road"></span> <%#: Item.Delivery %></h3>
+                        <h3><span class="glyphicon glyphicon-tag"></span> <%#: Item.ProductState %></h3>
+                        <h3><span class="glyphicon glyphicon-globe"></span> <%#: Item.City.Name %></h3>
 
                     </div>
+
+                    <div class="col-md-4">
+                        <h2>Seller info:</h2>
+                        <h3><span class="glyphicon glyphicon-user"></span> <%#: Item.Owner.UserName %></h3>
+                        <h3><span class="glyphicon glyphicon-phone"></span> <%#: Item.OwnerPhone %></h3>
+                        <h3><span class="glyphicon glyphicon-envelope"></span> <%#: Item.OwnerEmail %></h3>
+
+                    </div>
+
+
                 </div>
-            
-            
+            </div>
+
         </ItemTemplate>
+
     </asp:FormView>
-
-
-
 
 </asp:Content>
