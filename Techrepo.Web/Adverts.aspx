@@ -1,16 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Adverts.aspx.cs" Inherits="Techrepo.Web.Adverts" MasterPageFile="~/Site.Master" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">    
+    <hr />    
     <div class="search-button">
-            <div class="form-search">
-                <div class="input-append">
-                    <asp:TextBox runat="server" ID="TextBoxSearchParam" type="text" name="q" class="col-md-3 search-query" placeholder="Search by advert title or description"></asp:TextBox>
-                    <asp:LinkButton runat="server" ID="LinkButtonSearch"
-                        OnClick="LinkButtonSearch_Click" CssClass="btn  btn-primary" Text="Search"></asp:LinkButton>
-                </div>
+        <div class="form-search">
+            <div class="input-append">
+                <asp:TextBox runat="server" ID="TextBoxSearchParam" type="text" name="q" CssClass="col-md-3 search-query" placeholder="Search by advert title or description"></asp:TextBox>
+                <asp:LinkButton runat="server" ID="LinkButtonSearch"
+                    OnClick="LinkButtonSearch_Click" CssClass="btn  btn-primary" Text="Search"></asp:LinkButton>
             </div>
         </div>
-   
+    </div>
+   <hr />
 
     <asp:ListView runat="server"
         ID="ListViewAdverts"
@@ -40,22 +41,6 @@
                     <asp:Button runat="server" ID="BtnDel" CommandArgument='<%# Eval("Id") %>' CommandName="Del" Text="Delete" OnCommand="Delete_Click" CssClass="hidden"/>
                 </div>
             </div>
-
-
-            <!-- ************************** -->
-            <%-- <div class="col-md-4">
-
-                <asp:HyperLink NavigateUrl='<%# string.Format("~/advertdetails.aspx?id={0}", Item.Id) %>' runat="server">
-                               <h1><%#: Item.Title %></h1>
-                                  
-                                <img src="<%#:Item.Photos.Split(';')[0] %>" height="100" alt="Techrepo advert"/>
-                </asp:HyperLink>
-                <br />
-                <h3><span class="glyphicon glyphicon-piggy-bank"> <%#: Item.Price %>лв.</span></h3>
-                <h3><span class="glyphicon glyphicon-tag"></span> <%#: Item.ProductState %></h3>
-
-
-            </div>--%>
         </ItemTemplate>
         <GroupSeparatorTemplate>
             <hr />

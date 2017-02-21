@@ -15,7 +15,6 @@ namespace Techrepo.MVP.Search
         public SearchPresenter(ISearchView view, IAdvertsService advertService)
             : base(view)
         {
-           // Guard.WhenArgument(bookService, "bookService").IsNull().Throw();
            if(advertService == null)
             {
                 throw new ArgumentNullException("Service cannot be null");
