@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Techrepo.Models;
 
-namespace Techrepo.MVP.Administration.City.Create
+namespace Techrepo.MVP.Administration.CreateCityNamespace
 {
     public class CreateCityViewModel
     {
-        public IEnumerable<Models.City> advertCategories { get; set; }
+        public IQueryable<City> Cities { get; set; }
+        public City City { get; set; }
     }
 }

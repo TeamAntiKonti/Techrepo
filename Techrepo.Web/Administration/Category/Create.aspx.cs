@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using Techrepo.Models;
 using Techrepo.MVP.Administration.Category.Create;
+using Techrepo.MVP.Administration.CreateCityNamespace;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 namespace Techrepo.Web.Administration.Category
 {
     [PresenterBinding(typeof(CreateCategoryPresenter))]
-    public partial class Create : MvpPage<CreateCategoryViewModel>,ICreateCategoryView
+    public partial class Create : MvpPage<CreateCategoryViewModel>, ICreateCategoryView
     {
-        public event EventHandler<CreateCategoryEventArgs> OnCreateNewCategory;
-   
+        public event EventHandler OnCreateNewCategory;
+        public event EventHandler OnGetAllCategories;
+        public event EventHandler<IdEventArgs> OnUpdateCategory;
+        public event EventHandler<IdEventArgs> OnDeleteCategory;
 
         protected string SuccessMessage
         {
@@ -22,20 +22,26 @@ namespace Techrepo.Web.Administration.Category
             private set;
         }
 
-
-        protected void Page_Load(object sender, EventArgs e)
+        public IQueryable<AdvertCategory> ListView1_GetData()
         {
+            this.OnGetAllCategories?.Invoke(this, null);
 
+            return this.Model.AdvertCategories;
         }
 
-        protected void CreateCategory_Click(object sender, EventArgs e)
+        public void ListView1_InsertItem()
         {
-            if (IsValid)
-            {
-                this.OnCreateNewCategory?.Invoke(this, new CreateCategoryEventArgs(this.CategoryName.Text));
-                successMessage.Visible = true;
-                SuccessMessage = "Successfully added!";
-            }
+            this.OnCreateNewCategory?.Invoke(this, null);
+        }
+
+        public void ListView1_UpdateItem(int id)
+        {
+            this.OnUpdateCategory?.Invoke(this, new IdEventArgs(id));
+        }
+
+        public void ListView1_DeleteItem(int id)
+        {
+            this.OnDeleteCategory?.Invoke(this, new IdEventArgs(id));
         }
     }
 }

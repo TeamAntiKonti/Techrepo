@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Techrepo.MVP.Administration.City.Create;
+using Techrepo.MVP.Administration.CreateCityNamespace;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using Techrepo.Models;
 
-namespace Techrepo.Web.Administration.City
+namespace Techrepo.Web.Administration.CreateCityNamespace
 {
     [PresenterBinding(typeof(CreateCityPresenter))]
     public partial class Create : MvpPage<CreateCityViewModel>, ICreateCityView
     {
-        public event EventHandler<CreateCityEventArgs> OnCreateNewCity;
-
+        public event EventHandler OnCreateNewCity;
+        public event EventHandler OnGetAllCities;
+        public event EventHandler<IdEventArgs> OnUpdateCity;
+        public event EventHandler<IdEventArgs> OnDelete;
 
         protected string SuccessMessage
         {
@@ -22,17 +21,27 @@ namespace Techrepo.Web.Administration.City
             private set;
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        public IQueryable<City> ListView1_GetData()
         {
+            this.OnGetAllCities?.Invoke(this, null);
 
+            return this.Model.Cities;
         }
 
-        protected void CreateCity_Click(object sender, EventArgs e)
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void ListView1_UpdateItem(int id)
         {
-            if (IsValid)
-            {
-                this.OnCreateNewCity?.Invoke(this, new CreateCityEventArgs(this.CityName.Text));
-            }
+            this.OnUpdateCity?.Invoke(this, new IdEventArgs(id));       
+        }
+
+        public void ListView1_InsertItem()
+        {
+            this.OnCreateNewCity?.Invoke(this, null);
+        }
+
+        public void ListView1_DeleteItem(int id)
+        {
+            this.OnDelete?.Invoke(this, new IdEventArgs(id));
         }
     }
 }

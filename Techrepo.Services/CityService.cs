@@ -27,12 +27,8 @@ namespace Techrepo.Services
             this.repository = repository;
         }
 
-        public void CreateNewCity(string cityName)
+        public void CreateNewCity(City city)
         {
-            //factory maybe?
-            City city = new City();
-            city.Name = cityName;
-
             this.repository.Add(city);
             this.unitOfWork.Commit();
         }
@@ -40,6 +36,31 @@ namespace Techrepo.Services
         public IEnumerable<City> GetAllCities()
         {
             return this.repository.GetAll();
+        }
+
+        public IQueryable<City> GetAllCitiesSorted()
+        {
+            return this.repository.All().OrderBy(city => city.Name);
+        }
+
+        public City GetById(int id)
+        {
+            return this.repository.GetById(id);
+        }
+        
+        public void UpdateCity(City city)
+        {
+            City cityToBeUpdated = this.GetById(city.Id);
+            cityToBeUpdated = city;
+
+            this.unitOfWork.Commit();
+        }
+
+        public void DeleteCity(int id)
+        {
+            City city = this.repository.GetById(id);
+            this.repository.Delete(city);
+            this.unitOfWork.Commit();
         }
     }
 }
