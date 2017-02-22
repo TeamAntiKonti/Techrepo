@@ -12,7 +12,6 @@ namespace Techrepo.MVP.Administration.Category.Create
         event EventHandler<IdEventArgs> OnUpdateCategory;
         event EventHandler<IdEventArgs> OnDeleteCategory;
         ModelStateDictionary ModelState { get; }
-
         bool TryUpdateModel<TModel>(TModel model) where TModel : class;
     }
 }

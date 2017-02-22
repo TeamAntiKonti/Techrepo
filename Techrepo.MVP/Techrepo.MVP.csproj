@@ -53,9 +53,6 @@
     <Compile Include="Administration\City\Create\CreateCityViewModel.cs" />
     <Compile Include="Administration\City\Create\ICreateCityView.cs" />
     <Compile Include="Administration\City\Create\IdEventArgs.cs" />
-    <Compile Include="AdminPanel\AdminPanelPresenter.cs" />
-    <Compile Include="AdminPanel\AdminPanelViewModel.cs" />
-    <Compile Include="AdminPanel\IAdminPanelView.cs" />
     <Compile Include="AdvertDetails\AdvertDetailsEventArgs.cs" />
     <Compile Include="AdvertDetails\AdvertDetailsPresenter.cs" />
     <Compile Include="AdvertDetails\AdvertDetailsViewModel.cs" />
@@ -63,7 +60,6 @@
     <Compile Include="Adverts\AdvertsPresenter.cs" />
     <Compile Include="Adverts\AdvertsViewModel.cs" />
     <Compile Include="Adverts\IAdvertsView.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CreateAdvert\CreateAdvertEventArgs.cs" />
     <Compile Include="CreateAdvert\CreateAdvertPresenter.cs" />
     <Compile Include="CreateAdvert\CreateAdvertViewModel.cs" />

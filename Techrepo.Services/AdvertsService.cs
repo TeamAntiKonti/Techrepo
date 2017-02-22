@@ -48,5 +48,14 @@ namespace Techrepo.Services
             this.techrepoContext.SaveChanges();
 
         }
+
+        public void UpdateAdvert(Advert advert)
+        {
+            Advert advertToBeUpdated = this.GetById(advert.Id);
+
+            advertToBeUpdated = advert;
+
+            this.techrepoContext.SaveChanges();
+        }
     }
 }

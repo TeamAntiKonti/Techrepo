@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Techrepo.Models;
 
 namespace Techrepo.Services
@@ -19,6 +15,7 @@ namespace Techrepo.Services
 
 
         void DeleteAdvert(int id);
+        void UpdateAdvert(Advert advert);
 
     }
 }

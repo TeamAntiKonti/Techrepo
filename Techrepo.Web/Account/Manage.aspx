@@ -3,12 +3,10 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-
         <asp:FormView runat="server" ID="UserForm"
         SelectMethod="GetUserInfo"       
         UpdateMethod="UpdateUserProfile"
-        ItemType="Techrepo.Models.User"
-            
+        ItemType="Techrepo.Models.User"            
         DataKeyNames="Id">
         <ItemTemplate>
             <h3>Profile Information</h3>
@@ -33,7 +31,6 @@
             </div>  
             <div class="col-md-6">
                 <asp:Button runat="server" Text="Edit" CommandName="Edit" CssClass="btn btn-warning" />
-
             </div> 
         </ItemTemplate>
         <EditItemTemplate>
@@ -42,17 +39,17 @@
             <asp:Label runat="server" AssociatedControlID="EditFirstName" Text="First name:"></asp:Label>
             <asp:TextBox runat="server" ID="EditFirstName" Text="<%# BindItem.FirstName %>" CssClass="form-control"></asp:TextBox>
             <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditFirstName" 
-                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,20}$" Text="Minimum 3 and maximum 20 characters required." />
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,30}$" Text="Minimum 3 and maximum 20 characters required." />
 
             <asp:Label runat="server" AssociatedControlID="EditLastName" Text="Last name:"></asp:Label>
             <asp:TextBox runat="server" ID="EditLastName" Text="<%# BindItem.LastName %>" CssClass="form-control"></asp:TextBox>
             <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditLastName" 
-                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,500}$" Text="Minimum 3 and maximum 500 characters required."  />
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,30}$" Text="Minimum 3 and maximum 500 characters required."  />
            
             <asp:Label runat="server" AssociatedControlID="EditUsername" Text="Username:"></asp:Label>
             <asp:TextBox runat="server" ID="EditUsername" Text="<%# BindItem.UserName %>" CssClass="form-control"></asp:TextBox>
             <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="EditUsername" 
-                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,500}$" Text="Minimum 3 and maximum 500 characters required."  />
+                    CssClass="text-danger" ValidationExpression="^[\s\S]{3,20}$" Text="Minimum 3 and maximum 500 characters required."  />
            
             <dl class="col-md-2 control-label">
                 <dt>Password:</dt>

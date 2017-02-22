@@ -51,8 +51,6 @@ namespace Techrepo.Web.Account
             this.OnGetUserDetails?.Invoke(this, new GetUserByIdEventArgs(userId));
         }
 
-
-
         //protected void Page_Load()
         //{
         //    string userId = this.Context.User.Identity.GetUserId();
@@ -108,19 +106,10 @@ namespace Techrepo.Web.Account
         //    }
         //}
 
-
-        //private void AddErrors(IdentityResult result)
-        //{
-        //    foreach (var error in result.Errors)
-        //    {
-        //        ModelState.AddModelError("", error);
-        //    }
-        //}
-
         public void UpdateUserProfile(string id)
         {
-                        
-            
+            this.OnUpdateUserInfo?.Invoke(this, new UserDetailsEventArgs(this.Model.User, id));
+
             //if (Avatar.HasFile)
             //{
             //    if (Avatar.PostedFile.ContentType == "image/jpeg"
@@ -142,7 +131,6 @@ namespace Techrepo.Web.Account
             //        this.AvatarUrl = "~/images/" + filename;
             //        this.OnUpdateProfile?.Invoke(this, new GetUserByIdEventArgs(this.Context, userId, RelativePath));
             //    }
-            this.OnUpdateUserInfo?.Invoke(this, new UserDetailsEventArgs(this.Model.User, id));            
         }
     }
 }

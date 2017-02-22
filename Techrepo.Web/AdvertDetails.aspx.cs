@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.ModelBinding;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Techrepo.Models;
+using Techrepo.MVP.Administration.CreateCityNamespace;
 using Techrepo.MVP.AdvertDetails;
 using WebFormsMvp;
 using WebFormsMvp.Web;
@@ -16,6 +13,7 @@ namespace Techrepo.Web
     public partial class AdvertDetails :MvpPage<AdvertDetailsViewModel>,IAdvertDetailsView
     {
         public event EventHandler<AdvertDetailsEventArgs> OnAdvertDetails;
+        public event EventHandler<IdEventArgs> OnUpdateAdvert;
 
        public Advert FormViewAdvertDetails_GetItem([QueryString] int? id)
         {
@@ -25,11 +23,9 @@ namespace Techrepo.Web
             return this.Model.Advert;
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        public void UpdateAdvert(int id)
         {
-         
+            this.OnUpdateAdvert?.Invoke(this, new IdEventArgs(id));
         }
-
-       
     }
 }
